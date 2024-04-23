@@ -9,7 +9,7 @@ def home_page():
 	if request.method == 'POST':
 		movie_name = request.form['movie']
 		return redirect(url_for('results', movie=movie_name))
-	return render_template('home.html')
+	return render_template('index.html')
 
 @app.route('/results/<string:movie>')
 # Expects one argument as specified by the route
