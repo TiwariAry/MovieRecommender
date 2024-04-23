@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result_style.css') }}">
+    <title>Movie Recommender</title>
+</head>
+<body>
+    <section>
+        {% if movies is string %}
+            <h2>{{ movies }}</h2>
+        {% else %}
+            <h2>Recommended movies</h2>
+            <ul>
+                {% for movie in movies %}
+                <li>{{ movie }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </section>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='background_setter.js') }}"></script>
+</body>
+</html>
